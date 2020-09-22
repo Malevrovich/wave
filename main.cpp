@@ -75,16 +75,16 @@ int main() {
 			if (cur.x >= 1) {
 				check_and_push(map, queue, value, cur.x - 1, cur.y - 2);
 			}
-			if (cur.x <= map[0].size() - 2) {
+			if (cur.x <= map.size() - 2) {
 				check_and_push(map, queue, value, cur.x + 1, cur.y - 2);
 			}
 		}
 
-		if (cur.y < map.size() - 2) {
+		if (cur.y < map[0].size() - 2) {
 			if (cur.x >= 1) {
 				check_and_push(map, queue, value, cur.x - 1, cur.y + 2);
 			}
-			if (cur.x <= map[0].size() - 2) {
+			if (cur.x <= map.size() - 2) {
 				check_and_push(map, queue, value, cur.x + 1, cur.y + 2);
 			}
 		}
@@ -144,7 +144,7 @@ int main() {
 					continue;
 				}
 			}
-			if (cur.x <= map[0].size() - 2) {
+			if (cur.x <= map.size() - 2) {
 				if (map[cur.x + 1][cur.y - 2] == value - 1) {
 					cur = Dot(cur.x + 1, cur.y - 2);
 					way.push_back(cur);
@@ -153,7 +153,7 @@ int main() {
 			}
 		}
 
-		if (cur.y < map.size() - 2) {
+		if (cur.y < map[0].size() - 2) {
 			if (cur.x >= 1) {
 				if (map[cur.x - 1][cur.y + 2] == value - 1) {
 					cur = Dot(cur.x - 1, cur.y + 2);
@@ -161,7 +161,7 @@ int main() {
 					continue;
 				}
 			}
-			if (cur.x <= map[0].size() - 2) {
+			if (cur.x <= map.size() - 2) {
 				if (map[cur.x + 1][cur.y + 2] == value - 1) {
 					cur = Dot(cur.x + 1, cur.y + 2);
 					way.push_back(cur);
